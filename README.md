@@ -16,7 +16,7 @@ Example
 * Run the Angular with `NgModule`    
   - change the `script` tag in `index.html`
   ```html
-   <script type="module" src="./src/angular/app.module"></script>
+   <script type="module" src="./src/angular/app.module.ts"></script>
   ```
   - `yarn serve` - run into browser `http://localhost:3000`
 
