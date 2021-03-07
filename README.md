@@ -20,11 +20,8 @@ Example
   ```
   - `yarn serve` - run into browser `http://localhost:3000`
 
-<br />
 Note
 ------------
-> Currently it is only supports single component (inline template and styles)
-<br />
->   In Angular with NgModule, common modules are not working
-<br />
->   In Angular without NgModule using ngx-elements, using rxjs has an error
+> Currently it is only supports single component (inline template and styles)  
+> In Angular with NgModule, common modules are not working  
+> In Angular without NgModule using ngx-elements, using rxjs has an error  
