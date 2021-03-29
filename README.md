@@ -26,5 +26,3 @@ Note
 > Currently it is only supports single component (inline template and styles)
 <br />
 >   In Angular with NgModule, common modules are not working
-<br />
->   In Angular without NgModule using ngx-elements, using rxjs has an error

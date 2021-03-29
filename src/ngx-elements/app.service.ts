@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core'
+import { of } from 'rxjs'
+
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +8,7 @@ import { Injectable } from '@angular/core'
 export class AppService {
 
   getNames() {
-    return [ 'John', 'Jane' ]
+    return of([ 'John', 'Jane', 'Joe' ])
   }
 
 }

@@ -1,10 +1,12 @@
 import '@angular/compiler'
 
 import { Component, ViewEncapsulation } from "@angular/core"
-import { NgForOf } from "@angular/common"
+import { NgForOf, AsyncPipe } from "@angular/common"
 
 import { renderCustomElement } from 'ngx-elements'
 import { AppService } from "./app.service"
+
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'hello-world',
@@ -12,7 +14,7 @@ import { AppService } from "./app.service"
     <div>
       <h1>Hello {{ message }}</h1> 
       <ul>
-        <li *ngFor="let name of names">{{ name }}</li>
+        <li *ngFor="let name of names | async">{{ name }}</li>
       </ul>     
     </div>
   `,
@@ -26,7 +28,7 @@ import { AppService } from "./app.service"
 })
 export class AppComponent { 
   message = 'World'
-  names: string[] = []
+  names: Observable<string[]>
 
   constructor(service: AppService) {
     this.names = service.getNames()
@@ -34,5 +36,6 @@ export class AppComponent {
 }
 
 renderCustomElement(AppComponent, { 
-  directives: [ NgForOf ]
+  directives: [ NgForOf ],
+  pipes: [ AsyncPipe ]
 })
